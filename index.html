@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pago</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">Formulario de Pago</h3>
+                    </div>
+                    <div class="card-body">
+                       
+                        <form method="POST" action="procesar_pago.php">
+                            
+                            <div class="row mb-3">
+                                <div class="col-sm-5">
+                                    <label for="cardNumber">Número de Tarjeta</label>
+                                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="XXXXXXXXXXXXXXXX" required>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="cvc">CVC</label>
+                                    <input type="text" class="form-control" id="cvc" name="cvc" placeholder="000" required>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="amount">Monto</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-euro-sign"></i></span>
+                                        <input type="number" class="form-control" id="amount" name="amount" placeholder="Monto" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="firstName">Nombre</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="lastName">Apellido</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                           
+                            <div class="row mb-3">
+                                <div class="col-sm-8">
+                                    <label for="address">Dirección</label>
+                                    <input type="text" class="form-control" id="address" name="address" required>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="zip">Código Postal</label>
+                                    <input type="text" class="form-control" id="zip" name="zip" required>
+                                </div>
+                            </div>
+
+                            
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <label for="province">Provincia</label>
+                                    <select class="form-control" id="province" name="province" required>
+                                        <option value="">Selecciona una provincia</option>
+                                        <option value="Madrid">Madrid</option>
+                                        <option value="Barcelona">Barcelona</option>
+                                        <option value="Valencia">Valencia</option>
+                                        <option value="Sevilla">Sevilla</option>
+                                        <option value="Málaga">Málaga</option>
+                                        <option value="Murcia">Murcia</option>
+                                        <option value="Zaragoza">Zaragoza</option>
+                                        <option value="Alicante">Alicante</option>
+                                        <option value="Córdoba">Córdoba</option>
+                                        <option value="Valladolid">Valladolid</option>
+                                        <option value="Bilbao">Bilbao</option>
+                                        <option value="Granada">Granada</option>
+                                        <option value="Oviedo">Oviedo</option>
+                                        <option value="Santander">Santander</option>
+                                        <option value="San Sebastián">San Sebastián</option>
+                                        <option value="A Coruña">A Coruña</option>
+                                        <option value="Pamplona">Pamplona</option>
+                                        <option value="Castellón">Castellón</option>
+                                        <option value="Badajoz">Badajoz</option>
+                                        <option value="Tenerife">Tenerife</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>Formas de pago aceptadas:</p>
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-outline-secondary">
+                                            <input type="radio" name="payment" value="mastercard" autocomplete="off" checked>
+                                            <i class="fab fa-cc-mastercard"></i> Mastercard
+                                        </label>
+                                        <label class="btn btn-outline-secondary">
+                                            <input type="radio" name="payment" value="visa" autocomplete="off">
+                                            <i class="fab fa-cc-visa"></i> Visa
+                                        </label>
+                                        <label class="btn btn-outline-secondary">
+                                            <input type="radio" name="payment" value="paypal" autocomplete="off">
+                                            <i class="fab fa-cc-paypal"></i> PayPal
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+                            <div class="row">
+                                <div class="col text-end">
+                                    <button type="reset" class="btn btn-secondary">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Enviar Pago</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
